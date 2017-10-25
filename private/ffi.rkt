@@ -76,8 +76,10 @@
       str))
 
 (define (hid-error* d)
-  (or (non-empty-string? (hid-error d))
-      "Unsuccessful"))
+  (let ([err (hid-error d)])
+    (if (non-empty-string? err)
+        err
+        "Unsuccessful")))
 
 (define-hidapi* hid-init (_fun -> [r : _int] -> _void))
 
