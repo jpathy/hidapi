@@ -15,7 +15,9 @@
                     (ffi-lib "libhidapi-libusb"
                              #:fail (lambda()
                                       (ffi-lib "libhidapi-hidraw"
-                                               #:fail (lambda() #f))))))
+                                               #:fail (lambda ()
+                                                        (ffi-lib "libhidapi-0"
+                                                                 #:fail (lambda() #f))))))))
   #:make-c-id convention:hyphen->underscore
   #:default-make-fail make-not-available)
 
