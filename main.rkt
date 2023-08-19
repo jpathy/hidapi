@@ -62,7 +62,7 @@
   [hid-enumerate (->* ()
                       (#:vendor-id integer? #:product-id integer?)
                       (listof hid-device-info?))]
-  [hid-open (-> #:vendor-id integer? #:product-id integer? #:serial-number string?
+  [hid-open (-> #:vendor-id integer? #:product-id integer? #:serial-number (or/c string? #f)
                 (or/c hid-device? #f))]
   [hid-open-path (-> path? (or/c hid-device? #f))]
   [hid-set-nonblocking (-> hid-device? boolean? void?)]
