@@ -8,7 +8,7 @@
 
 @defmodule[hidapi]
 
-This package provides bindings to @link["https://github.com/signal11/hidapi"]{hidapi} library.
+This package provides bindings to @link["https://github.com/libusb/hidapi"]{hidapi} library.
 The library name is searched in the order:@linebreak{}
 @filepath{libhidapi} @filepath{libhidapi-libusb} @filepath{libhidapi-hidraw}
 
